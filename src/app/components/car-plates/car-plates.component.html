@@ -1,0 +1,6 @@
+<app-car-plate 
+  *ngFor='let car_plate of car_plates' 
+  [car_plate]="car_plate"
+  (removeCarPlate)="removeCarPlate($event)"
+>
+</app-car-plate>

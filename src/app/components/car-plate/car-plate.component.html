@@ -1,0 +1,25 @@
+<div class="car-plate-item">
+  <div class="col">
+    <span class="car-plate-text">{{car_plate.plate_number}}</span>
+  </div>
+  <div class="col">
+    <span class="car-plate-text">{{car_plate.owner_name}}</span>
+  </div>
+  <div class="button-col">
+    <button (click)="onEdit(car_plate)" class="button">Edit</button>
+  </div>
+  <div class="button-col">
+    <button (click)="toggleConfirmation(true)" class="button">Remove</button>
+  </div>
+  <div [ngClass]="setModalClasses()">
+    <div class="confirmation-container">
+      <div class="confirmation-top">
+        <span>Are you sure you want to remove {{car_plate.plate_number}} car plate?</span>
+      </div>
+      <div class="confirmation-bottom">
+        <button (click)="toggleConfirmation(false)">No</button>
+        <button (click)="onRemove(car_plate)">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
