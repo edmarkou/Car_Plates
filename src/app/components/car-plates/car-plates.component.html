@@ -1,6 +1,14 @@
-<app-car-plate 
-  *ngFor='let car_plate of car_plates' 
-  [car_plate]="car_plate"
-  (removeCarPlate)="removeCarPlate($event)"
->
-</app-car-plate>
+<div>
+  <app-car-plate-search
+    (searchCarPlates)="searchCarPlates($event)"
+    (createNewCarPlate)="createNewCarPlate($event)"
+    #car_plate_search
+  >
+  </app-car-plate-search>
+  <app-car-plate 
+    *ngFor='let car_plate of car_plates' 
+    [car_plate]="car_plate"
+    (removeCarPlate)="removeCarPlate($event)"
+  >
+  </app-car-plate>
+</div>

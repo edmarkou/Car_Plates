@@ -1,0 +1,40 @@
+<div class="search-container">
+  <form class="search-form" (submit)="onSubmit($event)">
+    <input 
+      class="search-input"
+      name="search"
+      type="text"
+      [(ngModel)]="search"
+      placeholder="Search..."
+    />
+    <button type="submit">Search</button>
+  </form>
+  <button (click)="toggleModal(true)">Add car plate</button>
+  <div [ngClass]="setModalClasses()">
+    <form class="add-plate-container" (submit)="createCarPlate($event)">
+      <div class="add-plate-top">
+        <input
+          class="add-input"
+          name="owner_name"
+          type="text"
+          [(ngModel)]="owner_name"
+          placeholder="Your name"
+          maxlength="50"
+        />
+        <input
+          class="add-input"
+          name="plate_number"
+          type="text"
+          [(ngModel)]="plate_number"
+          placeholder="xxx-xxx"
+          maxlength="7"
+        />
+        <span [ngClass]="setErrorClasses()">This car plate already exists</span>
+      </div>
+      <div class="add-plate-bottom">
+        <button type="button" (click)="toggleModal(false)">Cancel</button>
+        <button type="submit">Add</button>
+      </div>
+    </form>
+  </div>
+</div>

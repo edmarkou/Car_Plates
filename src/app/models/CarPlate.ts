@@ -1,5 +1,5 @@
 export class CarPlate {
-  id:string;
+  _id:string;
   plate_number:string;
   owner_name:string;
 }

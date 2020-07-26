@@ -1,35 +1,29 @@
 import { Injectable } from '@angular/core';
 import { CarPlate } from '../models/CarPlate';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarPlateService {
-  car_plates:CarPlate[] = [
-    {
-      id: 'sdfsdf',
-      plate_number: "342-NNN",
-      owner_name: 'Edvardas'
-    },
-    {
-      id: 'eraasdf',
-      plate_number: "312-GFD",
-      owner_name: 'Andrius'
-    },
-    {
-      id: '4tegdfgs',
-      plate_number: "112-HNB",
-      owner_name: 'Lenny'
-    }
-  ];
+  constructor(private http:HttpClient) { }
 
-  constructor() { }
-
-  getCarPlates() {
-    return this.car_plates;
+  getCarPlates():Observable<CarPlate[]> {
+    return this.http.get<CarPlate[]>('/api/car-plates/get/all');
   }
 
-  removeCarPlate(car_plate:CarPlate) {
-    this.car_plates.filter(cp => cp.id !== car_plate.id);
+  removeCarPlate(car_plate:CarPlate):Observable<any> {
+    return this.http.delete(`/api/car-plates/delete/${car_plate._id}`, httpOptions);
+  }
+
+  createCarPlate(car_plate:object):Observable<any> {
+    return this.http.put('/api/car-plates/create', car_plate, httpOptions);
   }
 }

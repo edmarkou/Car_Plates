@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build & concurrently --kill-others \"npm run serve-api\" \"npm run serve\"",
+    "start": "npm run build & npm run serve",
     "serve": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build --output-path=public",
-    "serve-api": "node server.js",
+    "serve-api": "nodemon server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -21,7 +21,11 @@
     "@angular/platform-browser": "~10.0.5",
     "@angular/platform-browser-dynamic": "~10.0.5",
     "@angular/router": "~10.0.5",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.25",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
