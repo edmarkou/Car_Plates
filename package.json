@@ -26,6 +26,7 @@
     "express-handlebars": "^5.1.0",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.25",
+    "ngx-mask": "^9.1.2",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

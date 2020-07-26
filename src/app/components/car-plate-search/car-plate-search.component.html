@@ -26,8 +26,8 @@
           name="plate_number"
           type="text"
           [(ngModel)]="plate_number"
-          placeholder="xxx-xxx"
-          maxlength="7"
+          placeholder="ABC-123"
+          mask="SSS-000"
         />
         <span [ngClass]="setErrorClasses()">This car plate already exists</span>
       </div>

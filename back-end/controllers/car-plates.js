@@ -32,5 +32,11 @@ module.exports = {
         }).then(response => res.send(response)).catch(error => res.send({error}));
       } else res.send({error: "Car plate already exists."})
     }); 
+  },
+  updateCarPlate: (req, res) => {
+    CarPlates.update(
+      {_id: req.body.car_plate._id}, 
+      { $set: { owner_name: req.body.car_plate.owner_name, plate_number: req.body.car_plate.plate_number }}
+    ).then(response => res.json(response)).catch(error => res.json({error}));
   }
 }

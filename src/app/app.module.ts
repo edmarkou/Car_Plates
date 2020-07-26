@@ -9,6 +9,11 @@ import { CarPlatesComponent } from './components/car-plates/car-plates.component
 import { CarPlateComponent } from './components/car-plate/car-plate.component';
 import { CarPlateSearchComponent } from './components/car-plate-search/car-plate-search.component';
 import { FormsModule } from '@angular/forms';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [
@@ -22,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot(maskConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

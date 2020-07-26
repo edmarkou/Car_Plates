@@ -6,5 +6,6 @@ router.route('/get/all').get(CarPlateController.getAllCarPlates);
 router.route('/get/:id').get(CarPlateController.getCarPlate);
 router.route('/delete/:id').delete(CarPlateController.removeCarPlate);
 router.route('/create').put(CarPlateController.createCarPlate);
+router.route('/update').post(CarPlateController.updateCarPlate);
 
 module.exports = router;

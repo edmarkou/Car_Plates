@@ -40,10 +40,12 @@ export class CarPlateSearchComponent implements OnInit {
 
   createCarPlate = (event) => {
     event.preventDefault();
-    if (this.owner_name.length && this.plate_number.length) {
+    if (this.owner_name.length && this.plate_number.length === 6) {
+      const plate_number = this.plate_number.split('');
+      plate_number.splice(3, 0, '-');
       this.createNewCarPlate.emit({
         owner_name: this.owner_name,
-        plate_number: this.plate_number
+        plate_number: plate_number.join('')
       });
     }
   }
