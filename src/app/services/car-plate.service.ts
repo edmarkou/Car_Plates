@@ -26,4 +26,12 @@ export class CarPlateService {
   createCarPlate(car_plate:object):Observable<any> {
     return this.http.put('/api/car-plates/create', car_plate, httpOptions);
   }
+
+  getCarPlate(id:string):Observable<any> {
+    return this.http.get<CarPlate>(`/api/car-plates/get/${id}`);
+  }
+
+  updateCarPlate(car_plate:CarPlate):Observable<any> {
+    return this.http.post<CarPlate>(`/api/car-plates/update`, car_plate, httpOptions);
+  }
 }

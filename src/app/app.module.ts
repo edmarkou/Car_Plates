@@ -10,6 +10,9 @@ import { CarPlateComponent } from './components/car-plate/car-plate.component';
 import { CarPlateSearchComponent } from './components/car-plate-search/car-plate-search.component';
 import { FormsModule } from '@angular/forms';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { CarPlateEditComponent } from './views/car-plate-edit/car-plate-edit.component';
+import { MainPageComponent } from './views/main-page/main-page.component';
+import { CarPlateEditorComponent } from './components/car-plate-editor/car-plate-editor.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -21,7 +24,10 @@ const maskConfig: Partial<IConfig> = {
     HeaderComponent,
     CarPlatesComponent,
     CarPlateComponent,
-    CarPlateSearchComponent
+    CarPlateSearchComponent,
+    CarPlateEditComponent,
+    MainPageComponent,
+    CarPlateEditorComponent,
   ],
   imports: [
     BrowserModule,

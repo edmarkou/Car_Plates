@@ -21,10 +21,6 @@ export class CarPlateComponent implements OnInit {
     'modal--hidden': !this.show_confirmation
   });
 
-  onEdit(car_plate:CarPlate) {
-    console.log('edit', car_plate)
-  }
-
   onRemove(car_plate:CarPlate) {
     this.removeCarPlate.emit(car_plate);
     this.show_confirmation = false;

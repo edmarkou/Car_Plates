@@ -1,0 +1,27 @@
+<div [ngClass]="setPageClasses()">
+  <div class="row">
+    <div class="label"><span>Name:</span></div>
+    <input
+      [value]="car_plate.owner_name"
+      name="car_plate.owner_name"
+      type="text"
+      [(ngModel)]="car_plate.owner_name"
+      placeholder="Your name"
+      maxlength="50"
+    />
+  </div>
+  <div class="row">
+    <div class="label"><span>Car plate:</span></div>
+    <input
+      [value]="car_plate.plate_number"
+      name="car_plate.plate_number"
+      type="text"
+      [(ngModel)]="car_plate.plate_number"
+      placeholder="ABC-123"
+      mask="SSS-000"
+      [dropSpecialCharacters]="false"
+    />
+  </div>
+  <span [ngClass]="setErrorClasses()">{{error}}</span>
+  <button (click)="saveCarPlate()">Save</button>
+</div>

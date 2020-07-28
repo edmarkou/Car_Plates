@@ -14,7 +14,7 @@ export class CarPlateSearchComponent implements OnInit {
   owner_name:string = '';
   plate_number:string = '';
   show_create_plate:boolean = false;
-  on_create_error:boolean = false;
+  on_create_error:string = '';
 
   constructor() { }
 
@@ -40,22 +40,20 @@ export class CarPlateSearchComponent implements OnInit {
 
   createCarPlate = (event) => {
     event.preventDefault();
-    if (this.owner_name.length && this.plate_number.length === 6) {
-      const plate_number = this.plate_number.split('');
-      plate_number.splice(3, 0, '-');
+    if (this.owner_name.length && this.plate_number.length === 7) {
       this.createNewCarPlate.emit({
         owner_name: this.owner_name,
-        plate_number: plate_number.join('')
+        plate_number: this.plate_number
       });
-    }
+    } else this.on_create_error = 'Invalid input.'
   }
 
-  setCreateError = (bool:boolean) => {
-    if (bool) this.on_create_error = bool;
+  setCreateError = (error:string) => {
+    if (error) this.on_create_error = error;
     else {
       this.owner_name = '';
       this.plate_number = '';
-      this.on_create_error = false;
+      this.on_create_error = '';
       this.show_create_plate = false;
     }
   }

@@ -28,8 +28,9 @@
           [(ngModel)]="plate_number"
           placeholder="ABC-123"
           mask="SSS-000"
+          [dropSpecialCharacters]="false"
         />
-        <span [ngClass]="setErrorClasses()">This car plate already exists</span>
+        <span [ngClass]="setErrorClasses()">{{on_create_error}}</span>
       </div>
       <div class="add-plate-bottom">
         <button type="button" (click)="toggleModal(false)">Cancel</button>

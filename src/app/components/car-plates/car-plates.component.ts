@@ -35,15 +35,15 @@ export class CarPlatesComponent implements OnInit, AfterViewInit  {
   }
 
   createNewCarPlate = async (car_plate:object) => {
-    this.carPlateService.createCarPlate({car_plate}).subscribe(response => {
+    this.carPlateService.createCarPlate(car_plate).subscribe(response => {
       if (!response.error) {
         this.car_plates.unshift(response);
         this.car_plates = this.car_plates.filter(plate => (
           plate.owner_name.toLowerCase().indexOf(this.car_plate_search.search.toLowerCase()) !== -1
         )).sort(sortCarPlates);
-        this.car_plate_search.setCreateError(false);
+        this.car_plate_search.setCreateError('');
       } else {
-        this.car_plate_search.setCreateError(true);
+        this.car_plate_search.setCreateError(response.error);
       }
     })
   }

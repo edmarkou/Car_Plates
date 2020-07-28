@@ -6,7 +6,7 @@
     <span class="car-plate-text">{{car_plate.plate_number}}</span>
   </div>
   <div class="button-col">
-    <button (click)="onEdit(car_plate)" class="button">Edit</button>
+    <a routerLink="/edit/{{car_plate._id}}" class="button">Edit</a>
   </div>
   <div class="button-col">
     <button (click)="toggleConfirmation(true)" class="button">Remove</button>
