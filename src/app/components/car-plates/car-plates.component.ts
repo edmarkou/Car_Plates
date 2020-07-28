@@ -15,6 +15,7 @@ const sortCarPlates = (a, b) => {
 })
 export class CarPlatesComponent implements OnInit, AfterViewInit  {
   @ViewChild(CarPlateSearchComponent) car_plate_search:CarPlateSearchComponent;
+  current_page:number = 1;
   car_plates:CarPlate[] = [];
   constructor(private carPlateService:CarPlateService) { }
 

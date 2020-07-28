@@ -34,7 +34,10 @@ module.exports = {
     }); 
   },
   updateCarPlate: (req, res) => {
-    CarPlates.findOne({plate_number: req.body.plate_number.toUpperCase()}).then(exists => {
+    CarPlates.findOne({
+      plate_number: req.body.plate_number.toUpperCase(), 
+      _id: { $ne: req.body._id }
+    }).then(exists => {
       if (!exists) {
         CarPlates.updateOne(
           {_id: req.body._id}, 

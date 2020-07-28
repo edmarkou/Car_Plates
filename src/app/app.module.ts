@@ -13,6 +13,7 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 import { CarPlateEditComponent } from './views/car-plate-edit/car-plate-edit.component';
 import { MainPageComponent } from './views/main-page/main-page.component';
 import { CarPlateEditorComponent } from './components/car-plate-editor/car-plate-editor.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -34,7 +35,8 @@ const maskConfig: Partial<IConfig> = {
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxMaskModule.forRoot(maskConfig)
+    NgxMaskModule.forRoot(maskConfig),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

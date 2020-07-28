@@ -6,9 +6,10 @@
   >
   </app-car-plate-search>
   <app-car-plate 
-    *ngFor='let car_plate of car_plates' 
+    *ngFor='let car_plate of car_plates | paginate: { itemsPerPage: 6, currentPage: current_page }' 
     [car_plate]="car_plate"
     (removeCarPlate)="removeCarPlate($event)"
   >
   </app-car-plate>
+  <pagination-controls class="my-pagination" (pageChange)="current_page = $event"></pagination-controls>
 </div>
