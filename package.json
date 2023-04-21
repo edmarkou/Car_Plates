@@ -25,7 +25,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "mongodb": "^3.5.9",
-    "mongoose": "^5.9.25",
+    "mongoose": "^5.13.15",
     "ngx-mask": "^9.1.2",
     "ngx-pagination": "^5.0.0",
     "rxjs": "~6.5.5",
